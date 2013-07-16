@@ -1,8 +1,22 @@
 <?php get_header(); ?>
 <div class="container">
-	<div class="hero-unit">
-		<img src="<?php echo get_template_directory_uri(); ?>/bit.svg" alt="team"/>
-	</div>
+   <!--   <div class="hero-unit">-->
+      <div class="row">
+	 <div class="pagination-centered">
+		<?php
+			$mypost = array('post_type'=>'logos');
+			$loop= new WP_Query($mypost);
+			while($loop->have_posts()) : $loop->the_post();
+			$title=get_post_meta(get_the_ID(),'title',true);
+			$footer=get_post_meta(get_the_ID(),'footer',true);
+			$center=get_field('center_image');
+			endwhile;
+		?>	
+		<!--		<img src="<?php// echo get_template_directory_uri(); ?>/bit.svg" alt="team"/>-->
+		<img src="<?php echo $center; ?>" alt="team"/>
+		<!-- </div>-->
+	  </div>
+       </div>
 </div>
 
 <div class="row">
@@ -14,7 +28,7 @@
 		<?php endwhile; else: ?>
 		<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 		<?php endif; ?>
-		<!--<p><a class="btn" href="<?php echo get_template_directory_uri(); ?>/logo.jpg">View details &raquo;</a></p>-->
+	<!--	<p><a class="btn" href="<?php echo get_template_directory_uri(); ?>/logo.jpg">View details &raquo;</a></p>-->
 	</div>
 	<div class="span4">
 		<h3>Sponsors</h3>
@@ -23,7 +37,6 @@
 		<img src="<?php echo get_template_directory_uri(); ?>/sponsors/ubuntu.png"/>
 		<img src="<?php echo get_template_directory_uri(); ?>/sponsors/google.png"/>
 		<img src="<?php echo get_template_directory_uri(); ?>/sponsors/gnome.png"/>
-		<p><a class="btn" href="#">View details &raquo;</a></p>
 	</div>
 </div>
 <?php get_footer(); ?>

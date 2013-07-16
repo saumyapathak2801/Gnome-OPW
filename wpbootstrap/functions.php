@@ -109,6 +109,22 @@ if(function_exists("register_field_group"))
 				'instructions' => 'Choose the color for navigation bar',
 				'required' => 1,
 			),
+			array (
+				'default_value' => '#000000',
+				'key' => 'field_51e552503f48e',
+				'label' => 'Hyperlinks',
+				'name' => 'links',
+				'type' => 'color_picker',
+				'instructions' => 'Choose the color for all the links',
+			),
+			array (
+				'default_value' => '#000000',
+				'key' => 'field_51e5543cd82c0',
+				'label' => 'Links color in navbar',
+				'name' => 'links_navbar',
+				'type' => 'color_picker',
+				'instructions' => 'Choose the color you want	for the links in the navigation bar',
+			),
 		),
 		'location' => array (
 			array (
@@ -156,6 +172,16 @@ if(function_exists("register_field_group"))
 				'instructions' => 'Upload the footer image',
 				'required' => 1,
 			),
+			array (
+				'save_format' => 'url',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+				'key' => 'field_51e444803edd0',
+				'label' => 'center image',
+				'name' => 'center_image',
+				'type' => 'image',
+				'instructions' => 'Upload the image to be displayed on the home page center',
+			),
 		),
 		'location' => array (
 			array (
@@ -178,6 +204,7 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+
 
 
 ?>

@@ -15,6 +15,8 @@
 	$navbar=get_post_meta(get_the_ID(),'navbar','true');
 	$txt=get_post_meta(get_the_ID(),'textcolor','true');
 	$background=get_post_meta(get_the_ID(),'background','true');
+	$links=get_post_meta(get_the_ID(),'links','true');
+	$links_navbar=get_post_meta(get_the_ID(),'links_navbar','true');
 	endwhile;
 ?>
 @import url('bootstrap/css/bootstrap.css'); 
@@ -26,13 +28,13 @@ body {
 
 .navbar-inverse .navbar-inner {
   background-color: #1b1b1b;
-  background-image: -moz-linear-gradient(top, <?php echo $navbar; ?>, #111111);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(<?php echo $navbar; ?>), to(#111111));
-  background-image: -webkit-linear-gradient(top, <?php echo $navbar; ?>, #111111);
-  background-image: -o-linear-gradient(top, <?php echo $navbar; ?>, #111111);
-  background-image: linear-gradient(to bottom, <?php echo $navbar; ?>, #111111);
+  background-image: -moz-linear-gradient(top, <?php echo $navbar; ?>, <?php echo $navbar; ?>);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(<?php echo $navbar; ?>), to(<?php echo $navbar; ?>));
+  background-image: -webkit-linear-gradient(top, <?php echo $navbar; ?>, <?php echo $navbar; ?>);
+  background-image: -o-linear-gradient(top, <?php echo $navbar; ?>, <?php echo $navbar; ?>);
+  background-image: linear-gradient(to bottom, <?php echo $navbar; ?>, <?php echo $navbar; ?>);
   background-repeat: repeat-x;
-  border-color: #252525;
+  #  border-color: #252525;
 }
 h1,
 h2,
@@ -51,3 +53,12 @@ body{
 color: <?php echo $txt; ?>;
 background-color: <?php echo $background; ?>;
 }
+a {
+   color: <?php echo $links ?>;
+}
+.navbar-inverse .brand,
+.navbar-inverse .nav > li > a {
+   color: <?php echo $links_navbar ?>;
+   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
