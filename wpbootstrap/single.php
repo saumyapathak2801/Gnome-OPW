@@ -10,13 +10,13 @@
 		<?php the_content(); ?>
 					
 		<hr>
-	     </div>
-	  </div>
-	     <div class="row">
-		<div class="span8">
-		   <?php comments_template('', true ); ?>
-		</div>
-	     </div>
+  </div>
+</div>
+<div class="row">
+	<div class="span8">
+	   <?php comments_template('', true ); ?>
+	</div>
+</div>
 		
 	<?php endwhile; else: ?>
 		<p><?php _e('Sorry, this page does not exist.'); ?></p>
